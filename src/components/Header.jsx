@@ -4,6 +4,7 @@ import ControlPresupuesto from "./ControlPresupuesto.jsx";
 
 const Header = (
     {
+        gastos,
         presupuesto,
         setPresupuesto,
         isValidPresupuesto,
@@ -16,6 +17,7 @@ const Header = (
             <h1>Planificador de Gastos</h1>
             {isValidPresupuesto ?(
                 <ControlPresupuesto
+                    gastos={gastos}
                     presupuesto={presupuesto}
                 />
             ):(
