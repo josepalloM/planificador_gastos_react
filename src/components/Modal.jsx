@@ -8,7 +8,8 @@ const Modal = ({
                    animarModal,
                    setAnimarModal,
                    guardarGasto,
-                   gastoEditar
+                   gastoEditar,
+                   setGastoEditar
 }) => {
 
     const [nombre, setNombre] = useState("")
@@ -19,8 +20,8 @@ const Modal = ({
     const [id, setId] = useState('')
 
 
-    useEffect(()=>{
-        if (Object.keys(gastoEditar).length > 0){
+    useEffect(() => {
+        if (Object.keys(gastoEditar).length > 0) {
             setNombre(gastoEditar.nombre)
             setCantidad(gastoEditar.cantidad)
             setCategoria(gastoEditar.categoria)
@@ -32,7 +33,7 @@ const Modal = ({
     const ocultarModal = () => {
 
         setAnimarModal(false)
-
+        setGastoEditar({})
         setTimeout(() => {
             setModal(false)
         }, 500)
